@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Data
+@Data  
 @NoArgsConstructor
 public class Event {
 
@@ -15,19 +15,19 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String titulo;
+    private String title;
 
-    private String descripcion;
+    private String description;
 
-    private LocalDate fechaInicio;
+    private LocalDate startDate;
 
-    private LocalDate fechaFin;
+    private LocalDate endDate;
 
-    private LocalTime horaInicio;
+    private LocalTime startTime;
 
-    private LocalTime horaFin;
+    private LocalTime endTime;
 
-    private boolean completada;
+    private Boolean status;
 
-    private boolean eliminada;
+    private Boolean eliminated;
 }

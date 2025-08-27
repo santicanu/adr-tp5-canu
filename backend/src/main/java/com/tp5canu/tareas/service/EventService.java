@@ -17,24 +17,40 @@ public class EventService {
     }
 
     public List<Event> getAll() {
-        return eventRepository.findAllByEliminadoFalse();
+        return eventRepository.findAllByEliminatedFalse();
     }
 
     public Event getById(Long id) {
-        return eventRepository.findByIdAndEliminadoFalse(id);
+        return eventRepository.findByIdAndEliminatedFalse(id);
     }
 
     public Event save(Event event) {
         return eventRepository.save(event);
     }
 
+    public Event update(Long id, Event eventUpdated) {
+        Event existingEvent = getById(id);
+        
+        // Update the fields
+        existingEvent.setTitle(eventUpdated.getTitle());
+        existingEvent.setDescription(eventUpdated.getDescription());
+        existingEvent.setStartDate(eventUpdated.getStartDate());
+        existingEvent.setStartTime(eventUpdated.getStartTime());
+        existingEvent.setEndDate(eventUpdated.getEndDate());
+        existingEvent.setEndTime(eventUpdated.getEndTime());
+        existingEvent.setStatus(eventUpdated.getStatus());
+        
+        // Save and return the updated event
+        return save(existingEvent);
+    }
+
     public void delete(Long id) {
         Event event = findById(id);
-        event.setEliminada(true);
+        event.setEliminated(true);
         eventRepository.save(event);
     }
 
     public Event findById(Long id){
-        return eventRepository.findByIdAndEliminadoFalse(id);
+        return eventRepository.findByIdAndEliminatedFalse(id);
     }
 }

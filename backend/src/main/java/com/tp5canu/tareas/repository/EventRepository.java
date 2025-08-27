@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface EventRepository extends JpaRepository<Event, Long> {
 
-    List<Event> findAllByEliminadoFalse();
-    Event findByIdAndEliminadoFalse(Long id);
+    List<Event> findAllByEliminatedFalse();
+    Event findByIdAndEliminatedFalse(Long id);
 }

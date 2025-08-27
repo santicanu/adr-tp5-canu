@@ -1,7 +1,7 @@
 spring.application.name=tareas
-spring.datasource.url=jdbc:mysql://localhost:3306/todoapp
+spring.datasource.url=jdbc:mysql://localhost:3306/tareas
 spring.datasource.username=root
-spring.datasource.password=7070
+spring.datasource.password=1234
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
@@ -10,5 +10,5 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 # Puerto del backend (por defecto es 8080)
 server.port=8080
 
-# Permitir CORS desde React (Util en desarrollo)
+# Permitir CORS desde React (útil en desarrollo)
 spring.web.cors.allowed-origins=http://localhost:5173
