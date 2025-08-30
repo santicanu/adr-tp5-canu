@@ -25,6 +25,7 @@ public class EventService {
     }
 
     public Event save(Event event) {
+        event.setEliminated(false);
         return eventRepository.save(event);
     }
 
